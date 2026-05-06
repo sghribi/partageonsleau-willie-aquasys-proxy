@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { createServer } from "node:http";
 import { handle } from "../dist/src/index.js";
 

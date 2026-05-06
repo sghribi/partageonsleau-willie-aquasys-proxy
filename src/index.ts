@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import type { ScalewayContext, ScalewayEvent, ScalewayResponse } from "./types";
 import { authenticateClient } from "./auth";
 import { loadConfig } from "./config";
@@ -80,6 +81,7 @@ function statusCodeFromError(error: unknown): number {
     const candidate = Number((error as { statusCode?: unknown }).statusCode);
     if (Number.isInteger(candidate) && candidate >= 400 && candidate <= 599) return candidate;
   }
+
   return 500;
 }
 
